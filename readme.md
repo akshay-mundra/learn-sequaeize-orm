@@ -1,0 +1,1 @@
+Test project to learn sequalize ORM usage.
