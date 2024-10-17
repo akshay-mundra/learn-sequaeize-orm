@@ -5,7 +5,7 @@ const {
 	POSTGRES_USER,
 	POSTGRES_DB_NAME,
 	POSTGRES_HOST,
-	POSTGRES_DIALECT,
+	// POSTGRES_DIALECT,
 } = process.env;
 
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
 		username: POSTGRES_USER,
 		password: POSTGRES_PASSWORD,
 		database: POSTGRES_DB_NAME,
-		dialect: POSTGRES_DIALECT,
+		dialect: 'postgres',
 		host: POSTGRES_HOST,
 		define: {
 			underscored: true,
