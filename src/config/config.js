@@ -1,4 +1,5 @@
-require('dotenv').config();
+// require('dotenv').config();
+require('dotenv').config({ path: __dirname + '/../../.env' });
 
 const {
 	POSTGRES_PASSWORD,
@@ -15,6 +16,7 @@ module.exports = {
 		database: POSTGRES_DB_NAME,
 		dialect: 'postgres',
 		host: POSTGRES_HOST,
+		logging: console.log,
 		define: {
 			underscored: true,
 			createdAt: 'created_at',
