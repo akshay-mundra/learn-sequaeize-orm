@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       PhoneNumber.belongsTo(models.User, {
-        foreignKey: 'userId',
+        foreignKey: 'user_id',
         as: 'user',
       });
     }
@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       //   allowNull: false,
       //   primaryKey: true,
       // },
-      userId: {
+      user_id: {
         type: DataTypes.UUID,
         allowNull: false,
         references: {
@@ -32,7 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         onDelete: 'CASCADE',
       },
-      phoneNumber: {
+      phone_number: {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
@@ -50,6 +50,7 @@ module.exports = (sequelize, DataTypes) => {
       sequelize,
       modelName: 'PhoneNumber',
       tableName: 'phone_numbers',
+      paranoid: true,
     },
   );
   return PhoneNumber;

@@ -10,11 +10,11 @@ module.exports = {
         primaryKey: true,
         unique: true,
       },
-      firstName: {
+      first_name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      lastName: {
+      last_name: {
         type: Sequelize.STRING,
         allowNull: true,
       },
@@ -22,12 +22,17 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true,
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
+        type: Sequelize.DATE,
+      },
+      deleted_at: {
+        allowNull: true,
+        defaultValue: null,
         type: Sequelize.DATE,
       },
     });

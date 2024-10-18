@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.hasMany(models.PhoneNumber, {
-        foreignKey: 'userId',
+        foreignKey: 'user_id',
         as: 'phoneNumbers',
         onDelete: 'CASCADE',
       });
@@ -24,11 +24,11 @@ module.exports = (sequelize, DataTypes) => {
       //   allowNull: false,
       //   primaryKey: true,
       // },
-      firstName: {
+      first_name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      lastName: {
+      last_name: {
         type: DataTypes.STRING,
         allowNull: true,
       },
@@ -44,6 +44,7 @@ module.exports = (sequelize, DataTypes) => {
       sequelize,
       modelName: 'User',
       tableName: 'users',
+      paranoid: true,
     },
   );
   return User;

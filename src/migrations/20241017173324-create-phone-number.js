@@ -10,7 +10,7 @@ module.exports = {
         primaryKey: true,
         unique: true,
       },
-      userId: {
+      user_id: {
         type: Sequelize.UUID,
         allowNull: false,
         references: {
@@ -19,7 +19,7 @@ module.exports = {
         },
         onDelete: 'CASCADE',
       },
-      phoneNumber: {
+      phone_number: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -29,12 +29,17 @@ module.exports = {
         allowNull: false,
         defaultValue: 'mobile',
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
+        type: Sequelize.DATE,
+      },
+      deleted_at: {
+        allowNull: true,
+        defaultValue: null,
         type: Sequelize.DATE,
       },
     });
